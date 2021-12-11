@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#f5f6f9">
+
+    <RelativeLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="12dp"
+        android:text="Give"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="44sp"
+        />
+        <ImageView
+            android:id="@+id/undoButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_undo"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollableContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerView"
+        android:layout_above="@+id/footerView"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/profileView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_bg"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Sudhan"
+                    android:layout_marginStart="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/projectOrTaskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileView"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="Project or Task Title"
+                android:textColor="#b6bcc2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/projectOrTaskTitleET"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/projectOrTaskTitle"
+                android:background="@drawable/edit_text_bg"
+                android:backgroundTint="@color/white"
+                android:hint="Enter the title or name of the project"
+                android:inputType="textCapWords"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColorHint="#b6bcc2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/eventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/projectOrTaskTitleET"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="Event Date"
+                android:textColor="#b6bcc2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/eventDateET"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/eventDate"
+                android:background="@drawable/edit_text_bg"
+                android:backgroundTint="@color/white"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Select the date"
+                android:inputType="textCapWords"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColorHint="#b6bcc2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/competency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/eventDateET"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="Competency"
+                android:textColor="#b6bcc2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+<!--            <androidx.appcompat.widget.AppCompatEditText-->
+<!--                android:id="@+id/competencyET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_below="@+id/competency"-->
+<!--                android:background="@drawable/edit_text_bg"-->
+<!--                android:backgroundTint="@color/white"-->
+<!--                android:clickable="false"-->
+<!--                android:cursorVisible="false"-->
+<!--                android:focusable="false"-->
+<!--                android:focusableInTouchMode="false"-->
+<!--                android:hint="Select Competency"-->
+<!--                android:inputType="textCapWords"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:visibility="gone"-->
+<!--                android:textColorHint="#b6bcc2" />-->
+
+            <LinearLayout
+                android:id="@+id/compentencyOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/competency"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@drawable/edit_text_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="Select competency"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textColor="#b6bcc2"/>
+
+                <TextView
+                    android:id="@+id/firstCompentency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/five_star"
+                    android:background="@drawable/capsule_bg_5"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="8dp"
+                    android:text="5\u2605  Transparnt Communication "/>
+                <TextView
+                    android:id="@+id/secondCompentency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/three_star"
+                    android:background="@drawable/capsule_bg_3"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="3\u2605 Service Delivery"/>
+                <TextView
+                    android:id="@+id/thirdCompentency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/one_star"
+                    android:background="@drawable/capsule_bg_1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="1\u2605 Planning"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/compentencyOutput"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="Message"
+                android:textColor="#b6bcc2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/messageET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/message"
+                android:background="@drawable/edit_text_bg"
+                android:backgroundTint="@color/white"
+                android:hint="Type your message here..."
+                android:inputType="textMultiLine"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:lines="5"
+                android:minLines="5"
+                android:gravity="top"
+                android:textColorHint="#b6bcc2" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <CheckBox
+            android:id="@+id/sendFeedbackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send an anonymous feedback"
+            android:backgroundTint="#1464F4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"/>
+
+
+        <Button
+            android:id="@+id/giveFeedbackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sendFeedbackText"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="Give Feedback"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1464F4"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
